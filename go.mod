@@ -1,4 +1,4 @@
-module github.com/jacobtomlinson/kind
+module sigs.k8s.io/kind
 
 go 1.14
 
