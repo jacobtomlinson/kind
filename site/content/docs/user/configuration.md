@@ -257,7 +257,15 @@ nodes:
 - role: worker
 {{< /codeFromInline >}}
 
-You can also set a specific Kubernetes version by setting the `node`'s container image. You can find available image tags on the [releases page](https://github.com/kubernetes-sigs/kind/releases). Please include the `@sha256:` [image digest](https://docs.docker.com/engine/reference/commandline/pull/#pull-an-image-by-digest-immutable-identifier) from the image in the release notes, as seen in this example:
+## Per-Node Options
+
+The following options are available for setting on each entry in `nodes`.
+
+NOTE: not all options are documented yet!  We will fix this with time, PRs welcome!
+
+### Kubernetes Version
+
+You can set a specific Kubernetes version by setting the `node`'s container image. You can find available image tags on the [releases page](https://github.com/kubernetes-sigs/kind/releases). Please include the `@sha256:` [image digest](https://docs.docker.com/engine/reference/commandline/pull/#pull-an-image-by-digest-immutable-identifier) from the image in the release notes, as seen in this example:
 
 {{< codeFromInline lang="yaml" >}}
 kind: Cluster
@@ -268,13 +276,6 @@ nodes:
   image: kindest/node:v1.16.4@sha256:b91a2c2317a000f3a783489dfb755064177dbc3a0b2f4147d50f04825d016f55
 {{< /codeFromInline >}}
 
-
-## Per-Node Options
-
-The following options are available for setting on each entry in `nodes`.
-
-NOTE: not all options are documented yet!  We will fix this with time, PRs welcome!
-
 ### Extra Mounts
 
 Extra mounts can be used to pass through storage on the host to a kind node
@@ -283,7 +284,7 @@ for persisting data, mounting through code etc.
 {{< codeFromFile file="static/examples/config-with-mounts.yaml" lang="yaml" >}}
 
 
-NOTE: If you are using Docker for Mac or Windows check that the hostPath is
+**NOTE**: If you are using Docker for Mac or Windows check that the hostPath is
 included in the Preferences -> Resources -> File Sharing.
 
 For more information see the [Docker file sharing guide.](https://docs.docker.com/docker-for-mac/#file-sharing)
@@ -293,8 +294,8 @@ For more information see the [Docker file sharing guide.](https://docs.docker.co
 Extra port mappings can be used to port forward to the kind nodes. This is a 
 cross-platform option to get traffic into your kind cluster. 
 
-With docker on Linux you can simply send traffic to the node IPs from the host
-without this, but to cover macOS and Windows you'll want to use these.
+If you are running Docker without the Docker Desktop Application on Linux, you can simply send traffic to the node IPs from the host without extra port mappings. 
+With the installation of the Docker Desktop Application, whether it is on macOs, Windows or Linux, you'll want to use these.
 
 You may also want to see the [Ingress Guide].
 
@@ -366,6 +367,29 @@ spec:
 
 [Ingress Guide]: /docs/user/ingress
 
+### Extra Labels
+
+Extra labels might be useful for working with
+[nodeSelectors](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/).
+
+An example label for specifying a `tier` label:
+
+{{< codeFromInline lang="yaml">}}
+kind: Cluster
+apiVersion: kind.x-k8s.io/v1alpha4
+nodes:
+- role: control-plane
+- role: worker
+  extraPortMappings:
+  - containerPort: 30950
+    hostPort: 80
+  labels:
+    tier: frontend
+- role: worker
+  labels:
+    tier: backend
+{{< /codeFromInline >}}
+
 ### Kubeadm Config Patches
 
 KIND uses [`kubeadm`](/docs/design/principles/#leverage-existing-tooling) 
@@ -373,7 +397,7 @@ to configure cluster nodes.
 
 Formally  KIND runs `kubeadm init` on the first control-plane node, we can customize the flags by using the kubeadm
 [InitConfiguration](https://kubernetes.io/docs/reference/setup-tools/kubeadm/kubeadm-init/#config-file) 
-([spec](https://godoc.org/k8s.io/kubernetes/cmd/kubeadm/app/apis/kubeadm/v1beta2#InitConfiguration))
+([spec](https://godoc.org/k8s.io/kubernetes/cmd/kubeadm/app/apis/kubeadm/v1beta3#InitConfiguration))
 
 {{< codeFromInline lang="yaml" >}}
 kind: Cluster
@@ -388,7 +412,7 @@ nodes:
         node-labels: "my-label=true"
 {{< /codeFromInline >}}
 
-If you want to do more customization, there are four configuration types available during `kubeadm init`: `InitConfiguration`, `ClusterConfiguration`, `KubeProxyConfiguration`, `KubeletConfiguration`. For example, we could override the apiserver flags by using the kubeadm [ClusterConfiguration](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/control-plane-flags/) ([spec](https://pkg.go.dev/k8s.io/kubernetes/cmd/kubeadm/app/apis/kubeadm/v1beta2#ClusterConfiguration)):
+If you want to do more customization, there are four configuration types available during `kubeadm init`: `InitConfiguration`, `ClusterConfiguration`, `KubeProxyConfiguration`, `KubeletConfiguration`. For example, we could override the apiserver flags by using the kubeadm [ClusterConfiguration](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/control-plane-flags/) ([spec](https://pkg.go.dev/k8s.io/kubernetes/cmd/kubeadm/app/apis/kubeadm/v1beta3#ClusterConfiguration)):
 
 {{< codeFromInline lang="yaml" >}}
 kind: Cluster
@@ -407,7 +431,7 @@ On every additional node configured in the KIND cluster,
 worker or control-plane (in HA mode),
 KIND runs `kubeadm join` which can be configured using the 
 [JoinConfiguration](https://kubernetes.io/docs/reference/setup-tools/kubeadm/kubeadm-join/#config-file)
-([spec](https://godoc.org/k8s.io/kubernetes/cmd/kubeadm/app/apis/kubeadm/v1beta2#JoinConfiguration))
+([spec](https://godoc.org/k8s.io/kubernetes/cmd/kubeadm/app/apis/kubeadm/v1beta3#JoinConfiguration))
 
 {{< codeFromInline lang="yaml" >}}
 kind: Cluster

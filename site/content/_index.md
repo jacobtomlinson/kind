@@ -27,7 +27,7 @@ kind bootstraps each "node" with [kubeadm][kubeadm]. For more details see [the d
 
 For more detailed instructions see [the user guide][user guide].
 
-You can install kind with `go get sigs.k8s.io/kind`. This will put `kind` in
+You can install kind with `go install sigs.k8s.io/kind@{{< stableVersion>}}` (for [go] [1.17+][go-supported]). This will put `kind` in
 `$(go env GOPATH)/bin`. You may need to add that directory to your `$PATH` as
 shown [here](https://golang.org/doc/code.html#GOPATH) if you encounter the error
 `kind: command not found` after installation.
@@ -68,7 +68,7 @@ The maintainers of this project are reachable via:
 - [filing an issue] against this repo
 - The Kubernetes [SIG-Testing Mailing List]
 
-Current maintainers are [@BenTheElder], [@munnerz], [@aojea], and [@amwat] -- feel free to
+Current maintainers are [@aojea] and [@BenTheElder] -- feel free to
 reach out directly if you have any questions!
 
 Pull Requests are very welcome!  
@@ -118,7 +118,5 @@ Participation in the Kubernetes community is governed by the [Kubernetes Code of
 [1.0 roadmap]: /docs/contributing/1.0-roadmap
 [install docker]: https://docs.docker.com/install/
 [@BenTheElder]: https://github.com/BenTheElder
-[@munnerz]: https://github.com/munnerz
 [@aojea]: https://github.com/aojea
-[@amwat]: https://github.com/amwat
 [contributor guide]: /docs/contributing/getting-started

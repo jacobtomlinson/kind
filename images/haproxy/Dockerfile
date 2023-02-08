@@ -15,7 +15,7 @@
 # This image is a haproxy image + minimal config so the container will not exit
 # while we rewrite the config at runtime and signal haproxy to reload.
 
-ARG BASE="k8s.gcr.io/build-image/debian-base:buster-v1.8.0"
+ARG BASE="registry.k8s.io/build-image/debian-base:bullseye-v1.3.0"
 FROM ${BASE} as build
 
 # NOTE: copyrights.tar.gz is a quirk of Kubernetes's debian-base image
@@ -27,9 +27,7 @@ RUN [ ! -f /usr/share/copyrights.tar.gz ] || tar -C / -xzvf /usr/share/copyright
 # - haproxy (see: https://haproxy.debian.net/)
 # - bash (ldd is a bash script and debian-base removes bash)
 # - procps (for `kill` which kind needs)
-RUN echo deb http://deb.debian.org/debian buster-backports main \
-      >/etc/apt/sources.list.d/backports.list && \
-    apt update && \
+RUN apt update && \
     apt install -y --no-install-recommends haproxy=2.2.\* \
       procps bash
 
@@ -45,15 +43,14 @@ RUN mkdir -p "${STAGE_DIR}" && \
     stage-binary-and-deps.sh haproxy "${STAGE_DIR}" && \
     stage-binary-and-deps.sh cp "${STAGE_DIR}" && \
     stage-binary-and-deps.sh mkdir "${STAGE_DIR}" && \
-    stage-binary-and-deps.sh kill "${STAGE_DIR}"
+    stage-binary-and-deps.sh kill "${STAGE_DIR}" && \
+    find "${STAGE_DIR}"
 
 ################################################################################
 
-# haproxy is a c++ binary, so we will use the c++ distroless image
 # See: https://github.com/GoogleContainerTools/distroless/tree/main/base
-# See: https://github.com/GoogleContainerTools/distroless/tree/main/cc
-# This has /etc/passwd, tzdata, cacerts, glibc, libssl, openssl, and libgcc1
-FROM "gcr.io/distroless/cc"
+# This has /etc/passwd, tzdata, cacerts
+FROM "gcr.io/distroless/static-debian11"
 
 ARG STAGE_DIR="/opt/stage"
 

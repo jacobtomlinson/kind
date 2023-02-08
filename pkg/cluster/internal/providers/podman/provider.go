@@ -165,6 +165,9 @@ func (p *provider) DeleteNodes(n []nodes.Node) error {
 		}
 		nodeVolumes = append(nodeVolumes, volumes...)
 	}
+	if len(nodeVolumes) == 0 {
+		return nil
+	}
 	return deleteVolumes(nodeVolumes)
 }
 
@@ -430,8 +433,10 @@ func info(logger log.Logger) (*providers.ProviderInfo, error) {
 		SupportsCPUShares:   cgroupSupportsCPUShares,
 	}
 	if info.Rootless && !v.AtLeast(version.MustParseSemantic("4.0.0")) {
-		logger.Warn("Cgroup controller detection is not implemented for Podman. " +
-			"If you see cgroup-related errors, you might need to set systemd property \"Delegate=yes\", see https://kind.sigs.k8s.io/docs/user/rootless/")
+		if logger != nil {
+			logger.Warn("Cgroup controller detection is not implemented for Podman. " +
+				"If you see cgroup-related errors, you might need to set systemd property \"Delegate=yes\", see https://kind.sigs.k8s.io/docs/user/rootless/")
+		}
 	}
 	return info, nil
 }

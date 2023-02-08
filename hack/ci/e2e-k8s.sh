@@ -34,7 +34,7 @@ cleanup() {
   fi
   # KIND_CREATE_ATTEMPTED is true once we: kind create
   if [ "${KIND_CREATE_ATTEMPTED:-}" = true ]; then
-    kind "export" logs "${ARTIFACTS}/logs" || true
+    kind "export" logs "${ARTIFACTS}" || true
     kind delete cluster || true
   fi
   rm -f _output/bin/e2e.test || true
@@ -46,6 +46,7 @@ cleanup() {
 }
 
 # setup signal handlers
+# shellcheck disable=SC2317 # this is not unreachable code
 signal_handler() {
   if [ -n "${GINKGO_PID:-}" ]; then
     kill -TERM "$GINKGO_PID" || true
@@ -58,8 +59,13 @@ trap signal_handler INT TERM
 build() {
   # build the node image w/ kubernetes
   kind build node-image -v 1
+  # Ginkgo v1 is used by Kubernetes 1.24 and earlier, fallback if v2 is not available.
+  GINKGO_SRC_DIR="vendor/github.com/onsi/ginkgo/v2/ginkgo"
+  if [ ! -d "$GINKGO_SRC_DIR" ]; then
+      GINKGO_SRC_DIR="vendor/github.com/onsi/ginkgo/ginkgo"
+  fi
   # make sure we have e2e requirements
-  make all WHAT='cmd/kubectl test/e2e/e2e.test vendor/github.com/onsi/ginkgo/ginkgo'
+  make all WHAT="cmd/kubectl test/e2e/e2e.test ${GINKGO_SRC_DIR}"
 }
 
 check_structured_log_support() {
@@ -112,22 +118,9 @@ create_cluster() {
     runtime_config="{}"
     ;;
   true)
-    case "${KUBE_VERSION}" in
-    v1.1[0-7].*)
-      echo "GA_ONLY=true is only supported on versions >= v1.18, got ${KUBE_VERSION}"
-      exit 1
-      ;;
-    v1.18.*)
-      echo "Limiting to GA APIs and features (plus certificates.k8s.io/v1beta1 and RotateKubeletClientCertificate) for ${KUBE_VERSION}"
-      feature_gates='{"AllAlpha":false,"AllBeta":false,"RotateKubeletClientCertificate":true}'
-      runtime_config='{"api/alpha":"false", "api/beta":"false", "certificates.k8s.io/v1beta1":"true"}'
-      ;;
-    *)
-      echo "Limiting to GA APIs and features for ${KUBE_VERSION}"
-      feature_gates='{"AllAlpha":false,"AllBeta":false}'
-      runtime_config='{"api/alpha":"false", "api/beta":"false"}'
-      ;;
-    esac
+    echo "Limiting to GA APIs and features for ${KUBE_VERSION}"
+    feature_gates='{"AllAlpha":false,"AllBeta":false}'
+    runtime_config='{"api/alpha":"false", "api/beta":"false"}'
     ;;
   *)
     echo "\$GA_ONLY set to '${GA_ONLY}'; supported values are true and false (default)"
@@ -185,6 +178,9 @@ EOF
     --wait=1m \
     -v=3 \
     "--config=${ARTIFACTS}/kind-config.yaml"
+
+  # debug cluster version
+  kubectl version
 
   # Patch kube-proxy to set the verbosity level
   kubectl patch -n kube-system daemonset/kube-proxy \

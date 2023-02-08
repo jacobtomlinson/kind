@@ -60,13 +60,16 @@ On Linux:
 {{< codeFromInline lang="bash" >}}
 curl -Lo ./kind https://kind.sigs.k8s.io/dl/{{< stableVersion >}}/kind-linux-amd64
 chmod +x ./kind
-mv ./kind /some-dir-in-your-PATH/kind
+sudo mv ./kind /usr/local/bin/kind
 {{< /codeFromInline >}}
 
 On macOS:
 
 {{< codeFromInline lang="bash" >}}
-curl -Lo ./kind https://kind.sigs.k8s.io/dl/{{< stableVersion >}}/kind-darwin-amd64
+# for Intel Macs
+[ $(uname -m) = x86_64 ]&& curl -Lo ./kind https://kind.sigs.k8s.io/dl/{{< stableVersion >}}/kind-darwin-amd64
+# for M1 / ARM Macs
+[ $(uname -m) = arm64 ] && curl -Lo ./kind https://kind.sigs.k8s.io/dl/{{< stableVersion >}}/kind-darwin-arm64
 chmod +x ./kind
 mv ./kind /some-dir-in-your-PATH/kind
 {{< /codeFromInline >}}
@@ -194,6 +197,10 @@ kind delete cluster
 
 If the flag `--name` is not specified, kind will use the default cluster
 context name `kind` and delete that cluster.
+
+> **Note**: By design, requesting to delete a cluster that does not exist
+> will not return an error. This is intentional and is a means to have an
+> idempotent way of cleaning up resources.
 
 ## Loading an Image Into Your Cluster
 

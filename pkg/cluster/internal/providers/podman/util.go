@@ -100,6 +100,10 @@ func getVolumes(label string) ([]string, error) {
 	if err != nil {
 		return nil, err
 	}
+	if string(output) == "" {
+		// no volumes
+		return nil, nil
+	}
 	// Trim away the last `\n`.
 	trimmedOutput := strings.TrimSuffix(string(output), "\n")
 	// Get names of all volumes by splitting via `\n`.
@@ -149,4 +153,17 @@ type podmanStorageInfo struct {
 			BackingFilesystem string `json:"Backing Filesystem,omitempty"` // "v2"
 		} `json:"graphStatus"`
 	} `json:"store"`
+}
+
+// rootless: use fuse-overlayfs by default
+// https://github.com/kubernetes-sigs/kind/issues/2275
+func mountFuse() bool {
+	i, err := info(nil)
+	if err != nil {
+		return false
+	}
+	if i != nil && i.Rootless {
+		return true
+	}
+	return false
 }
