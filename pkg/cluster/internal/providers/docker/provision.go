@@ -225,6 +225,7 @@ func runArgsForNode(node *config.Node, clusterIPFamily config.ClusterIPFamily, n
 		"--privileged",
 		"--security-opt", "seccomp=unconfined", // also ignore seccomp
 		"--security-opt", "apparmor=unconfined", // also ignore apparmor
+		"--gpus", "all", // allow use of all GPUs
 		// runtime temporary storage
 		"--tmpfs", "/tmp", // various things depend on working /tmp
 		"--tmpfs", "/run", // systemd wants a writable /run
