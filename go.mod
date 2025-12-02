@@ -1,4 +1,4 @@
-module sigs.k8s.io/kind
+module github.com/jacobtomlinson/kind
 
 // NOTE: This is the go language version, NOT the compiler version.
 //
