@@ -22,11 +22,11 @@ import (
 
 	"github.com/spf13/pflag"
 
-	"sigs.k8s.io/kind/pkg/cmd"
-	"sigs.k8s.io/kind/pkg/cmd/kind"
-	"sigs.k8s.io/kind/pkg/errors"
-	"sigs.k8s.io/kind/pkg/exec"
-	"sigs.k8s.io/kind/pkg/log"
+	"github.com/jacobtomlinson/kind/pkg/cmd"
+	"github.com/jacobtomlinson/kind/pkg/cmd/kind"
+	"github.com/jacobtomlinson/kind/pkg/errors"
+	"github.com/jacobtomlinson/kind/pkg/exec"
+	"github.com/jacobtomlinson/kind/pkg/log"
 )
 
 // Main is the kind main(), it will invoke Run(), if an error is returned
@@ -38,7 +38,7 @@ func Main() {
 }
 
 // Run invokes the kind root command, returning the error.
-// See: sigs.k8s.io/kind/pkg/cmd/kind
+// See: github.com/jacobtomlinson/kind/pkg/cmd/kind
 func Run(logger log.Logger, streams cmd.IOStreams, args []string) error {
 	// NOTE: we handle the quiet flag here so we can fully silence cobra
 	if checkQuiet(args) {

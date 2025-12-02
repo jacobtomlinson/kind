@@ -18,10 +18,11 @@ package config
 
 import (
 	"fmt"
-	"sigs.k8s.io/kind/pkg/internal/assert"
 	"testing"
 
-	"sigs.k8s.io/kind/pkg/errors"
+	"github.com/jacobtomlinson/kind/pkg/internal/assert"
+
+	"github.com/jacobtomlinson/kind/pkg/errors"
 )
 
 func TestClusterValidate(t *testing.T) {

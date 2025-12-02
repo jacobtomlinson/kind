@@ -22,7 +22,7 @@ import (
 	"sort"
 	"testing"
 
-	"sigs.k8s.io/kind/pkg/cluster/nodes"
+	"github.com/jacobtomlinson/kind/pkg/cluster/nodes"
 )
 
 func Test_removeDuplicates(t *testing.T) {

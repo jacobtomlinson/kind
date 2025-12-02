@@ -17,9 +17,9 @@ limitations under the License.
 package encoding
 
 import (
-	"sigs.k8s.io/kind/pkg/apis/config/v1alpha4"
+	"github.com/jacobtomlinson/kind/pkg/apis/config/v1alpha4"
 
-	"sigs.k8s.io/kind/pkg/internal/apis/config"
+	"github.com/jacobtomlinson/kind/pkg/internal/apis/config"
 )
 
 // V1Alpha4ToInternal converts to the internal API version

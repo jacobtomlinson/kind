@@ -22,11 +22,11 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"sigs.k8s.io/kind/pkg/cluster"
-	"sigs.k8s.io/kind/pkg/cmd"
-	"sigs.k8s.io/kind/pkg/log"
+	"github.com/jacobtomlinson/kind/pkg/cluster"
+	"github.com/jacobtomlinson/kind/pkg/cmd"
+	"github.com/jacobtomlinson/kind/pkg/log"
 
-	"sigs.k8s.io/kind/pkg/internal/runtime"
+	"github.com/jacobtomlinson/kind/pkg/internal/runtime"
 )
 
 // NewCommand returns a new cobra.Command for getting the list of clusters

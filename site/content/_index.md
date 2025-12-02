@@ -6,7 +6,7 @@ title: kind
 [kind] is a tool for running local Kubernetes clusters using Docker container "nodes".  
 kind was primarily designed for testing Kubernetes itself, but may be used for local development or CI.
 
-If you have [go] 1.17+ and [docker], [podman] or [nerdctl] installed `go install sigs.k8s.io/kind@{{< stableVersion >}} && kind create cluster` is all you need!
+If you have [go] 1.17+ and [docker], [podman] or [nerdctl] installed `go install github.com/jacobtomlinson/kind@{{< stableVersion >}} && kind create cluster` is all you need!
 
 <img src="images/kind-create-cluster.png" />
 
@@ -25,7 +25,7 @@ kind bootstraps each "node" with [kubeadm][kubeadm]. For more details see [the d
 
 For more detailed instructions see [the user guide][user guide].
 
-You can install kind with `go install sigs.k8s.io/kind@{{< stableVersion>}}` (for [go] [1.17+][go-supported]). This will put `kind` in
+You can install kind with `go install github.com/jacobtomlinson/kind@{{< stableVersion>}}` (for [go] [1.17+][go-supported]). This will put `kind` in
 `$(go env GOPATH)/bin`. You may need to add that directory to your `$PATH` as
 shown [here](https://golang.org/doc/code.html#GOPATH) if you encounter the error
 `kind: command not found` after installation.
@@ -90,7 +90,7 @@ See also: our own [contributor guide] and the Kubernetes [community page].
 Participation in the Kubernetes community is governed by the [Kubernetes Code of Conduct].
 
 <!--links-->
-[kind]: https://sigs.k8s.io/kind
+[kind]: https://github.com/jacobtomlinson/kind
 [go]: https://golang.org/
 [go-supported]: https://golang.org/doc/devel/release.html#policy
 [docker]: https://www.docker.com/
@@ -98,8 +98,8 @@ Participation in the Kubernetes community is governed by the [Kubernetes Code of
 [nerdctl]: https://github.com/containerd/nerdctl
 [community page]: https://kubernetes.io/community/
 [Kubernetes Code of Conduct]: https://github.com/kubernetes/community/blob/master/code-of-conduct.md
-[Go Report Card Badge]: https://goreportcard.com/badge/sigs.k8s.io/kind
-[Go Report Card]: https://goreportcard.com/report/sigs.k8s.io/kind
+[Go Report Card Badge]: https://goreportcard.com/badge/github.com/jacobtomlinson/kind
+[Go Report Card]: https://goreportcard.com/report/github.com/jacobtomlinson/kind
 [conformance tests]: https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/conformance-tests.md
 [packages]: https://github.com/kubernetes-sigs/kind/tree/main/pkg
 [cluster package]: https://github.com/kubernetes-sigs/kind/tree/main/pkg/cluster

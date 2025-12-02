@@ -21,13 +21,13 @@ package kubeconfig
 import (
 	"bytes"
 
-	"sigs.k8s.io/kind/pkg/cluster/nodeutils"
-	"sigs.k8s.io/kind/pkg/errors"
+	"github.com/jacobtomlinson/kind/pkg/cluster/nodeutils"
+	"github.com/jacobtomlinson/kind/pkg/errors"
 
 	// this package has slightly more generic kubeconfig helpers
 	// and minimal dependencies on the rest of kind
-	"sigs.k8s.io/kind/pkg/cluster/internal/kubeconfig/internal/kubeconfig"
-	"sigs.k8s.io/kind/pkg/cluster/internal/providers"
+	"github.com/jacobtomlinson/kind/pkg/cluster/internal/kubeconfig/internal/kubeconfig"
+	"github.com/jacobtomlinson/kind/pkg/cluster/internal/providers"
 )
 
 // Export exports the kubeconfig given the cluster context and a path to write it to

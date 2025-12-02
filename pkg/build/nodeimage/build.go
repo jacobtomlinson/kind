@@ -22,10 +22,10 @@ import (
 	"os"
 	"runtime"
 
-	"sigs.k8s.io/kind/pkg/build/nodeimage/internal/kube"
-	"sigs.k8s.io/kind/pkg/errors"
-	"sigs.k8s.io/kind/pkg/internal/version"
-	"sigs.k8s.io/kind/pkg/log"
+	"github.com/jacobtomlinson/kind/pkg/build/nodeimage/internal/kube"
+	"github.com/jacobtomlinson/kind/pkg/errors"
+	"github.com/jacobtomlinson/kind/pkg/internal/version"
+	"github.com/jacobtomlinson/kind/pkg/log"
 )
 
 // Build builds a node image using the supplied options

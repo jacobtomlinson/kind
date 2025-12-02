@@ -32,7 +32,7 @@ cd "${REPO_ROOT}"
 go_test_opts=(
   "-coverprofile=${REPO_ROOT}/bin/${MODE}.cov"
   '-covermode' 'count'
-  '-coverpkg' 'sigs.k8s.io/kind/...'
+  '-coverpkg' 'github.com/jacobtomlinson/kind/...'
 )
 if [[ "${MODE}" = 'unit' ]]; then
   go_test_opts+=('-short' '-tags=nointegration')

@@ -22,7 +22,7 @@ import (
 	yaml "go.yaml.in/yaml/v3"
 	kubeyaml "sigs.k8s.io/yaml"
 
-	"sigs.k8s.io/kind/pkg/errors"
+	"github.com/jacobtomlinson/kind/pkg/errors"
 )
 
 // Encode encodes the cfg to yaml

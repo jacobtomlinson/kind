@@ -19,10 +19,10 @@ package nodeimage
 import (
 	"strings"
 
-	"sigs.k8s.io/kind/pkg/errors"
-	"sigs.k8s.io/kind/pkg/exec"
+	"github.com/jacobtomlinson/kind/pkg/errors"
+	"github.com/jacobtomlinson/kind/pkg/exec"
 
-	"sigs.k8s.io/kind/pkg/internal/patch"
+	"github.com/jacobtomlinson/kind/pkg/internal/patch"
 )
 
 const containerdConfigPath = "/etc/containerd/config.toml"

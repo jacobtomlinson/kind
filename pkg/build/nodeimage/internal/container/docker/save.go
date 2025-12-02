@@ -17,7 +17,7 @@ limitations under the License.
 package docker
 
 import (
-	"sigs.k8s.io/kind/pkg/exec"
+	"github.com/jacobtomlinson/kind/pkg/exec"
 )
 
 // Save saves image to dest, as in `docker save`

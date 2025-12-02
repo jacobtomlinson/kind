@@ -1,4 +1,4 @@
-module sigs.k8s.io/kind/site
+module github.com/jacobtomlinson/kind/site
 
 go 1.18
 

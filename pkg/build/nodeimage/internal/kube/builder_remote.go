@@ -27,8 +27,8 @@ import (
 	"strings"
 	"time"
 
-	"sigs.k8s.io/kind/pkg/errors"
-	"sigs.k8s.io/kind/pkg/log"
+	"github.com/jacobtomlinson/kind/pkg/errors"
+	"github.com/jacobtomlinson/kind/pkg/log"
 )
 
 type remoteBuilder struct {

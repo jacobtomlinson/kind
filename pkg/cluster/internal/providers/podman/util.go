@@ -21,10 +21,10 @@ import (
 	"fmt"
 	"strings"
 
-	"sigs.k8s.io/kind/pkg/errors"
-	"sigs.k8s.io/kind/pkg/exec"
+	"github.com/jacobtomlinson/kind/pkg/errors"
+	"github.com/jacobtomlinson/kind/pkg/exec"
 
-	"sigs.k8s.io/kind/pkg/internal/version"
+	"github.com/jacobtomlinson/kind/pkg/internal/version"
 )
 
 // IsAvailable checks if podman is available in the system

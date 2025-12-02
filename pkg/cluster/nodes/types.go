@@ -19,13 +19,13 @@ package nodes
 import (
 	"io"
 
-	"sigs.k8s.io/kind/pkg/exec"
+	"github.com/jacobtomlinson/kind/pkg/exec"
 )
 
 // Node represents a kind cluster node
 type Node interface {
 	// The node should implement exec.Cmder for running commands against the node
-	// see: sigs.k8s.io/kind/pkg/exec
+	// see: github.com/jacobtomlinson/kind/pkg/exec
 	exec.Cmder
 	// String should return the node name
 	String() string // see also: fmt.Stringer

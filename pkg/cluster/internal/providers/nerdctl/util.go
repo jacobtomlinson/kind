@@ -19,7 +19,7 @@ package nerdctl
 import (
 	"strings"
 
-	"sigs.k8s.io/kind/pkg/exec"
+	"github.com/jacobtomlinson/kind/pkg/exec"
 )
 
 // IsAvailable checks if nerdctl (or finch) is available in the system

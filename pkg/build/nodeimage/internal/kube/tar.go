@@ -8,7 +8,7 @@ import (
 	"os"
 	"path/filepath"
 
-	"sigs.k8s.io/kind/pkg/log"
+	"github.com/jacobtomlinson/kind/pkg/log"
 )
 
 // extractTarball takes a gzipped-tarball and extracts the contents into a specified directory

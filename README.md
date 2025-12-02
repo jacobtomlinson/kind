@@ -5,7 +5,7 @@
 kind is a tool for running local Kubernetes clusters using Docker container "nodes".
 kind was primarily designed for testing Kubernetes itself, but may be used for local development or CI.
 
-If you have [go] 1.16+ and [docker], [podman] or [nerdctl] installed `go install sigs.k8s.io/kind@v0.30.0 && kind create cluster` is all you need!
+If you have [go] 1.16+ and [docker], [podman] or [nerdctl] installed `go install github.com/jacobtomlinson/kind@v0.30.0 && kind create cluster` is all you need!
 
 ![](site/static/images/kind-create-cluster.png)
 
@@ -23,7 +23,7 @@ kind bootstraps each "node" with [kubeadm][kubeadm]. For more details see [the d
 
 For a complete [install guide] see [the documentation here][install guide].
 
-You can install kind with `go install sigs.k8s.io/kind@v0.30.0`.
+You can install kind with `go install github.com/jacobtomlinson/kind@v0.30.0`.
 
 **NOTE**: please use the latest go to do this. KIND is developed with the latest stable go, see [`.go-version`](./.go-version) for the exact version we're using.
 
@@ -148,8 +148,8 @@ Participation in the Kubernetes community is governed by the [Kubernetes Code of
 [nerdctl]: https://github.com/containerd/nerdctl
 [community page]: https://kubernetes.io/community/
 [Kubernetes Code of Conduct]: code-of-conduct.md
-[Go Report Card Badge]: https://goreportcard.com/badge/sigs.k8s.io/kind
-[Go Report Card]: https://goreportcard.com/report/sigs.k8s.io/kind
+[Go Report Card Badge]: https://goreportcard.com/badge/github.com/jacobtomlinson/kind
+[Go Report Card]: https://goreportcard.com/report/github.com/jacobtomlinson/kind
 [conformance tests]: https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/conformance-tests.md
 [packages]: ./pkg
 [cluster package]: ./pkg/cluster

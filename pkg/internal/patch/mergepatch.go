@@ -19,7 +19,7 @@ package patch
 import (
 	"sigs.k8s.io/yaml"
 
-	"sigs.k8s.io/kind/pkg/errors"
+	"github.com/jacobtomlinson/kind/pkg/errors"
 )
 
 type mergePatch struct {

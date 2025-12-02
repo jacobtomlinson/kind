@@ -19,9 +19,9 @@ package cluster
 import (
 	"time"
 
-	"sigs.k8s.io/kind/pkg/apis/config/v1alpha4"
-	internalcreate "sigs.k8s.io/kind/pkg/cluster/internal/create"
-	internalencoding "sigs.k8s.io/kind/pkg/internal/apis/config/encoding"
+	"github.com/jacobtomlinson/kind/pkg/apis/config/v1alpha4"
+	internalcreate "github.com/jacobtomlinson/kind/pkg/cluster/internal/create"
+	internalencoding "github.com/jacobtomlinson/kind/pkg/internal/apis/config/encoding"
 )
 
 // CreateOption is a Provider.Create option

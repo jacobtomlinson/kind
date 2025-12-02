@@ -20,7 +20,7 @@ import (
 	"os"
 	"strings"
 
-	"sigs.k8s.io/kind/pkg/internal/apis/config"
+	"github.com/jacobtomlinson/kind/pkg/internal/apis/config"
 )
 
 const (

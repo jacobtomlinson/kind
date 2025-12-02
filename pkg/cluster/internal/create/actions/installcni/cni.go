@@ -22,12 +22,12 @@ import (
 	"strings"
 	"text/template"
 
-	"sigs.k8s.io/kind/pkg/errors"
-	"sigs.k8s.io/kind/pkg/internal/apis/config"
+	"github.com/jacobtomlinson/kind/pkg/errors"
+	"github.com/jacobtomlinson/kind/pkg/internal/apis/config"
 
-	"sigs.k8s.io/kind/pkg/cluster/internal/create/actions"
-	"sigs.k8s.io/kind/pkg/cluster/nodeutils"
-	"sigs.k8s.io/kind/pkg/internal/patch"
+	"github.com/jacobtomlinson/kind/pkg/cluster/internal/create/actions"
+	"github.com/jacobtomlinson/kind/pkg/cluster/nodeutils"
+	"github.com/jacobtomlinson/kind/pkg/internal/patch"
 )
 
 type action struct{}

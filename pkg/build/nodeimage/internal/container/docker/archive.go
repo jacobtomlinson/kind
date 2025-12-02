@@ -25,7 +25,7 @@ import (
 	"io"
 	"os"
 
-	"sigs.k8s.io/kind/pkg/errors"
+	"github.com/jacobtomlinson/kind/pkg/errors"
 )
 
 // GetArchiveTags obtains a list of "repo:tag" docker image tags from a

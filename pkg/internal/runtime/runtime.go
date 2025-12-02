@@ -3,8 +3,8 @@ package runtime
 import (
 	"os"
 
-	"sigs.k8s.io/kind/pkg/cluster"
-	"sigs.k8s.io/kind/pkg/log"
+	"github.com/jacobtomlinson/kind/pkg/cluster"
+	"github.com/jacobtomlinson/kind/pkg/log"
 )
 
 // GetDefault selected the default runtime from the environment override

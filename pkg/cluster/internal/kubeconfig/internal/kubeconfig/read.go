@@ -22,7 +22,7 @@ import (
 
 	yaml "go.yaml.in/yaml/v3"
 
-	"sigs.k8s.io/kind/pkg/errors"
+	"github.com/jacobtomlinson/kind/pkg/errors"
 )
 
 // KINDFromRawKubeadm returns a kind kubeconfig derived from the raw kubeadm kubeconfig,

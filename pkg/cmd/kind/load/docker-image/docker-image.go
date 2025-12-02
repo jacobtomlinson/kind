@@ -25,17 +25,17 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"sigs.k8s.io/kind/pkg/cluster"
-	"sigs.k8s.io/kind/pkg/cluster/nodes"
-	"sigs.k8s.io/kind/pkg/cluster/nodeutils"
-	"sigs.k8s.io/kind/pkg/cmd"
-	"sigs.k8s.io/kind/pkg/errors"
-	"sigs.k8s.io/kind/pkg/exec"
-	"sigs.k8s.io/kind/pkg/fs"
-	"sigs.k8s.io/kind/pkg/log"
+	"github.com/jacobtomlinson/kind/pkg/cluster"
+	"github.com/jacobtomlinson/kind/pkg/cluster/nodes"
+	"github.com/jacobtomlinson/kind/pkg/cluster/nodeutils"
+	"github.com/jacobtomlinson/kind/pkg/cmd"
+	"github.com/jacobtomlinson/kind/pkg/errors"
+	"github.com/jacobtomlinson/kind/pkg/exec"
+	"github.com/jacobtomlinson/kind/pkg/fs"
+	"github.com/jacobtomlinson/kind/pkg/log"
 
-	"sigs.k8s.io/kind/pkg/internal/cli"
-	"sigs.k8s.io/kind/pkg/internal/runtime"
+	"github.com/jacobtomlinson/kind/pkg/internal/cli"
+	"github.com/jacobtomlinson/kind/pkg/internal/runtime"
 )
 
 type (

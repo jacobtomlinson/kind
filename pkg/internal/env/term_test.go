@@ -22,7 +22,7 @@ import (
 	"os"
 	"testing"
 
-	"sigs.k8s.io/kind/pkg/internal/assert"
+	"github.com/jacobtomlinson/kind/pkg/internal/assert"
 )
 
 func TestIsTerminal(t *testing.T) {

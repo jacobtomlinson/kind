@@ -25,8 +25,8 @@ import (
 
 	"al.essio.dev/pkg/shellescape"
 
-	"sigs.k8s.io/kind/pkg/errors"
-	"sigs.k8s.io/kind/pkg/exec"
+	"github.com/jacobtomlinson/kind/pkg/errors"
+	"github.com/jacobtomlinson/kind/pkg/exec"
 )
 
 // FindSource attempts to locate a kubernetes checkout using go's build package

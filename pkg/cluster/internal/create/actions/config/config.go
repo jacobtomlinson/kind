@@ -23,16 +23,16 @@ import (
 	"net"
 	"strings"
 
-	"sigs.k8s.io/kind/pkg/cluster/constants"
-	"sigs.k8s.io/kind/pkg/cluster/nodes"
-	"sigs.k8s.io/kind/pkg/errors"
+	"github.com/jacobtomlinson/kind/pkg/cluster/constants"
+	"github.com/jacobtomlinson/kind/pkg/cluster/nodes"
+	"github.com/jacobtomlinson/kind/pkg/errors"
 
-	"sigs.k8s.io/kind/pkg/cluster/internal/create/actions"
-	"sigs.k8s.io/kind/pkg/cluster/internal/kubeadm"
-	"sigs.k8s.io/kind/pkg/cluster/internal/providers/common"
-	"sigs.k8s.io/kind/pkg/cluster/nodeutils"
-	"sigs.k8s.io/kind/pkg/internal/apis/config"
-	"sigs.k8s.io/kind/pkg/internal/patch"
+	"github.com/jacobtomlinson/kind/pkg/cluster/internal/create/actions"
+	"github.com/jacobtomlinson/kind/pkg/cluster/internal/kubeadm"
+	"github.com/jacobtomlinson/kind/pkg/cluster/internal/providers/common"
+	"github.com/jacobtomlinson/kind/pkg/cluster/nodeutils"
+	"github.com/jacobtomlinson/kind/pkg/internal/apis/config"
+	"github.com/jacobtomlinson/kind/pkg/internal/patch"
 )
 
 // Action implements action for creating the node config files

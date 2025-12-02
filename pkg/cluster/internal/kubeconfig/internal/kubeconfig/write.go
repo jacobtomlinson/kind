@@ -20,7 +20,7 @@ import (
 	"os"
 	"path/filepath"
 
-	"sigs.k8s.io/kind/pkg/errors"
+	"github.com/jacobtomlinson/kind/pkg/errors"
 )
 
 // write writes cfg to configPath

@@ -17,7 +17,7 @@ limitations under the License.
 package kubeconfig
 
 import (
-	"sigs.k8s.io/kind/pkg/errors"
+	"github.com/jacobtomlinson/kind/pkg/errors"
 )
 
 // KINDClusterKey identifies kind clusters in kubeconfig files

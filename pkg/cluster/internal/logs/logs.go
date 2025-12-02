@@ -26,10 +26,10 @@ import (
 
 	"al.essio.dev/pkg/shellescape"
 
-	"sigs.k8s.io/kind/pkg/cluster/nodes"
-	"sigs.k8s.io/kind/pkg/errors"
-	"sigs.k8s.io/kind/pkg/exec"
-	"sigs.k8s.io/kind/pkg/log"
+	"github.com/jacobtomlinson/kind/pkg/cluster/nodes"
+	"github.com/jacobtomlinson/kind/pkg/errors"
+	"github.com/jacobtomlinson/kind/pkg/exec"
+	"github.com/jacobtomlinson/kind/pkg/log"
 )
 
 // DumpDir dumps the dir nodeDir on the node to the dir hostDir on the host

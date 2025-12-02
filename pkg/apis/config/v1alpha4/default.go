@@ -17,7 +17,7 @@ limitations under the License.
 package v1alpha4
 
 import (
-	"sigs.k8s.io/kind/pkg/apis/config/defaults"
+	"github.com/jacobtomlinson/kind/pkg/apis/config/defaults"
 )
 
 // SetDefaultsCluster sets uninitialized fields to their default value.

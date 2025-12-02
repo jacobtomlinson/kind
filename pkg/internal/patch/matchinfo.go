@@ -19,9 +19,9 @@ package patch
 import (
 	"sigs.k8s.io/yaml"
 
-	"sigs.k8s.io/kind/pkg/errors"
+	"github.com/jacobtomlinson/kind/pkg/errors"
 
-	"sigs.k8s.io/kind/pkg/internal/apis/config"
+	"github.com/jacobtomlinson/kind/pkg/internal/apis/config"
 )
 
 // we match resources and patches on their v1 TypeMeta

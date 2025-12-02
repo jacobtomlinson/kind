@@ -25,18 +25,18 @@ import (
 	"strconv"
 	"strings"
 
-	"sigs.k8s.io/kind/pkg/cluster/nodes"
-	"sigs.k8s.io/kind/pkg/cluster/nodeutils"
-	"sigs.k8s.io/kind/pkg/errors"
-	"sigs.k8s.io/kind/pkg/exec"
-	"sigs.k8s.io/kind/pkg/log"
+	"github.com/jacobtomlinson/kind/pkg/cluster/nodes"
+	"github.com/jacobtomlinson/kind/pkg/cluster/nodeutils"
+	"github.com/jacobtomlinson/kind/pkg/errors"
+	"github.com/jacobtomlinson/kind/pkg/exec"
+	"github.com/jacobtomlinson/kind/pkg/log"
 
-	"sigs.k8s.io/kind/pkg/cluster/internal/providers"
-	"sigs.k8s.io/kind/pkg/cluster/internal/providers/common"
-	"sigs.k8s.io/kind/pkg/internal/apis/config"
-	"sigs.k8s.io/kind/pkg/internal/cli"
-	"sigs.k8s.io/kind/pkg/internal/sets"
-	"sigs.k8s.io/kind/pkg/internal/version"
+	"github.com/jacobtomlinson/kind/pkg/cluster/internal/providers"
+	"github.com/jacobtomlinson/kind/pkg/cluster/internal/providers/common"
+	"github.com/jacobtomlinson/kind/pkg/internal/apis/config"
+	"github.com/jacobtomlinson/kind/pkg/internal/cli"
+	"github.com/jacobtomlinson/kind/pkg/internal/sets"
+	"github.com/jacobtomlinson/kind/pkg/internal/version"
 )
 
 // NewProvider returns a new provider based on executing `podman ...`

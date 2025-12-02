@@ -19,7 +19,7 @@ package cli
 import (
 	"fmt"
 
-	"sigs.k8s.io/kind/pkg/log"
+	"github.com/jacobtomlinson/kind/pkg/log"
 )
 
 // Status is used to track ongoing status in a CLI, with a nice loading spinner

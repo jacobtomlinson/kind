@@ -22,16 +22,16 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"sigs.k8s.io/kind/pkg/cmd"
-	"sigs.k8s.io/kind/pkg/cmd/kind/build"
-	"sigs.k8s.io/kind/pkg/cmd/kind/completion"
-	"sigs.k8s.io/kind/pkg/cmd/kind/create"
-	"sigs.k8s.io/kind/pkg/cmd/kind/delete"
-	"sigs.k8s.io/kind/pkg/cmd/kind/export"
-	"sigs.k8s.io/kind/pkg/cmd/kind/get"
-	"sigs.k8s.io/kind/pkg/cmd/kind/load"
-	"sigs.k8s.io/kind/pkg/cmd/kind/version"
-	"sigs.k8s.io/kind/pkg/log"
+	"github.com/jacobtomlinson/kind/pkg/cmd"
+	"github.com/jacobtomlinson/kind/pkg/cmd/kind/build"
+	"github.com/jacobtomlinson/kind/pkg/cmd/kind/completion"
+	"github.com/jacobtomlinson/kind/pkg/cmd/kind/create"
+	"github.com/jacobtomlinson/kind/pkg/cmd/kind/delete"
+	"github.com/jacobtomlinson/kind/pkg/cmd/kind/export"
+	"github.com/jacobtomlinson/kind/pkg/cmd/kind/get"
+	"github.com/jacobtomlinson/kind/pkg/cmd/kind/load"
+	"github.com/jacobtomlinson/kind/pkg/cmd/kind/version"
+	"github.com/jacobtomlinson/kind/pkg/log"
 )
 
 type flagpole struct {

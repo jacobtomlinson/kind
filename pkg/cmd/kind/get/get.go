@@ -22,11 +22,11 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"sigs.k8s.io/kind/pkg/cmd"
-	"sigs.k8s.io/kind/pkg/cmd/kind/get/clusters"
-	"sigs.k8s.io/kind/pkg/cmd/kind/get/kubeconfig"
-	"sigs.k8s.io/kind/pkg/cmd/kind/get/nodes"
-	"sigs.k8s.io/kind/pkg/log"
+	"github.com/jacobtomlinson/kind/pkg/cmd"
+	"github.com/jacobtomlinson/kind/pkg/cmd/kind/get/clusters"
+	"github.com/jacobtomlinson/kind/pkg/cmd/kind/get/kubeconfig"
+	"github.com/jacobtomlinson/kind/pkg/cmd/kind/get/nodes"
+	"github.com/jacobtomlinson/kind/pkg/log"
 )
 
 // NewCommand returns a new cobra.Command for get

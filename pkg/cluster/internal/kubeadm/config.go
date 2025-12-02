@@ -23,10 +23,10 @@ import (
 	"strings"
 	"text/template"
 
-	"sigs.k8s.io/kind/pkg/errors"
+	"github.com/jacobtomlinson/kind/pkg/errors"
 
-	"sigs.k8s.io/kind/pkg/internal/apis/config"
-	"sigs.k8s.io/kind/pkg/internal/version"
+	"github.com/jacobtomlinson/kind/pkg/internal/apis/config"
+	"github.com/jacobtomlinson/kind/pkg/internal/version"
 )
 
 // ConfigData is supplied to the kubeadm config template, with values populated

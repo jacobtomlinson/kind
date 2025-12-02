@@ -19,7 +19,7 @@ package kubeconfig
 import (
 	"os"
 
-	"sigs.k8s.io/kind/pkg/errors"
+	"github.com/jacobtomlinson/kind/pkg/errors"
 )
 
 // RemoveKIND removes the kind cluster kindClusterName from the KUBECONFIG

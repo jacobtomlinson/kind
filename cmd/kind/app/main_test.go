@@ -19,7 +19,7 @@ package app
 import (
 	"testing"
 
-	"sigs.k8s.io/kind/pkg/cmd"
+	"github.com/jacobtomlinson/kind/pkg/cmd"
 )
 
 func TestCheckQuiet(t *testing.T) {

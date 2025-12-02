@@ -164,7 +164,7 @@ GitHub actions are configured in `.github/workflows` in the kind repo.
 [gimme]: https://github.com/travis-ci/gimme
 [shellcheck]: https://shellcheck.net
 [golangci-lint]: https://github.com/golangci/golangci-lint
-[go-version]: https://sigs.k8s.io/kind/.go-version
+[go-version]: https://github.com/jacobtomlinson/kind/.go-version
 [quick start]: /docs/user/quick-start/
 [hugo]: https://gohugo.io
 [prow]: https://git.k8s.io/test-infra/

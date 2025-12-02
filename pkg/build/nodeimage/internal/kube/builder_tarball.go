@@ -22,8 +22,8 @@ import (
 	"path/filepath"
 	"strings"
 
-	"sigs.k8s.io/kind/pkg/errors"
-	"sigs.k8s.io/kind/pkg/log"
+	"github.com/jacobtomlinson/kind/pkg/errors"
+	"github.com/jacobtomlinson/kind/pkg/log"
 )
 
 // TODO(bentheelder): plumb through arch

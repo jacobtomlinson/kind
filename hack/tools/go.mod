@@ -1,4 +1,4 @@
-module sigs.k8s.io/kind/hack/tools
+module github.com/jacobtomlinson/kind/hack/tools
 
 go 1.23
 

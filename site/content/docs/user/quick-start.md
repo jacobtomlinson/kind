@@ -66,7 +66,7 @@ Move-Item .\kind-windows-amd64.exe c:\some-dir-in-your-PATH\kind.exe
 ### Installing From Source
 
 In addition to the pre-built binary + package manager installation options listed
-above you can install kind from source with `go install sigs.k8s.io/kind@{{< stableVersion >}}` or clone this repo
+above you can install kind from source with `go install github.com/jacobtomlinson/kind@{{< stableVersion >}}` or clone this repo
 and run `make build` from the repository.
 
 #### Installing With `make`
@@ -86,7 +86,7 @@ use it as `kind` from the command line.
 
 When installing with [Go](https://golang.org/) please use the latest stable Go release. At least go1.16 or greater is required.
 
-To install use: `go install sigs.k8s.io/kind@{{< stableVersion >}}`.
+To install use: `go install github.com/jacobtomlinson/kind@{{< stableVersion >}}`.
 
 If you are building from a local source clone, use `go install .` from the top-level directory of the clone.
 

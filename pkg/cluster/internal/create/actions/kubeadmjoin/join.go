@@ -20,16 +20,16 @@ package kubeadmjoin
 import (
 	"strings"
 
-	"sigs.k8s.io/kind/pkg/cluster/constants"
-	"sigs.k8s.io/kind/pkg/cluster/nodes"
-	"sigs.k8s.io/kind/pkg/errors"
-	"sigs.k8s.io/kind/pkg/exec"
-	"sigs.k8s.io/kind/pkg/internal/version"
-	"sigs.k8s.io/kind/pkg/log"
+	"github.com/jacobtomlinson/kind/pkg/cluster/constants"
+	"github.com/jacobtomlinson/kind/pkg/cluster/nodes"
+	"github.com/jacobtomlinson/kind/pkg/errors"
+	"github.com/jacobtomlinson/kind/pkg/exec"
+	"github.com/jacobtomlinson/kind/pkg/internal/version"
+	"github.com/jacobtomlinson/kind/pkg/log"
 
-	"sigs.k8s.io/kind/pkg/cluster/nodeutils"
+	"github.com/jacobtomlinson/kind/pkg/cluster/nodeutils"
 
-	"sigs.k8s.io/kind/pkg/cluster/internal/create/actions"
+	"github.com/jacobtomlinson/kind/pkg/cluster/internal/create/actions"
 )
 
 // Action implements action for creating the kubeadm join

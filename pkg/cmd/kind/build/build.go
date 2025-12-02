@@ -22,9 +22,9 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"sigs.k8s.io/kind/pkg/cmd"
-	"sigs.k8s.io/kind/pkg/cmd/kind/build/nodeimage"
-	"sigs.k8s.io/kind/pkg/log"
+	"github.com/jacobtomlinson/kind/pkg/cmd"
+	"github.com/jacobtomlinson/kind/pkg/cmd/kind/build/nodeimage"
+	"github.com/jacobtomlinson/kind/pkg/log"
 )
 
 // NewCommand returns a new cobra.Command for building

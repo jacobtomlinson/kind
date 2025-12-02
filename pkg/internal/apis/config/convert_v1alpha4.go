@@ -17,7 +17,7 @@ limitations under the License.
 package config
 
 import (
-	v1alpha4 "sigs.k8s.io/kind/pkg/apis/config/v1alpha4"
+	v1alpha4 "github.com/jacobtomlinson/kind/pkg/apis/config/v1alpha4"
 )
 
 // Convertv1alpha4 converts a v1alpha4 cluster to a cluster at the internal API version

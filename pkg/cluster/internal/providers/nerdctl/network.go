@@ -24,8 +24,8 @@ import (
 	"strconv"
 	"strings"
 
-	"sigs.k8s.io/kind/pkg/errors"
-	"sigs.k8s.io/kind/pkg/exec"
+	"github.com/jacobtomlinson/kind/pkg/errors"
+	"github.com/jacobtomlinson/kind/pkg/exec"
 )
 
 // This may be overridden by KIND_EXPERIMENTAL_DOCKER_NETWORK env,

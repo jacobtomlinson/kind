@@ -19,7 +19,7 @@ package v1alpha4
 import (
 	"strings"
 
-	"sigs.k8s.io/kind/pkg/errors"
+	"github.com/jacobtomlinson/kind/pkg/errors"
 )
 
 /*

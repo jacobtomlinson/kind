@@ -19,8 +19,8 @@ package nodeimage
 import (
 	"io"
 
-	"sigs.k8s.io/kind/pkg/errors"
-	"sigs.k8s.io/kind/pkg/exec"
+	"github.com/jacobtomlinson/kind/pkg/errors"
+	"github.com/jacobtomlinson/kind/pkg/exec"
 )
 
 type containerdImporter struct {

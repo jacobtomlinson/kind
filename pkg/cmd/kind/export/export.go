@@ -22,10 +22,10 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"sigs.k8s.io/kind/pkg/cmd"
-	"sigs.k8s.io/kind/pkg/cmd/kind/export/kubeconfig"
-	"sigs.k8s.io/kind/pkg/cmd/kind/export/logs"
-	"sigs.k8s.io/kind/pkg/log"
+	"github.com/jacobtomlinson/kind/pkg/cmd"
+	"github.com/jacobtomlinson/kind/pkg/cmd/kind/export/kubeconfig"
+	"github.com/jacobtomlinson/kind/pkg/cmd/kind/export/logs"
+	"github.com/jacobtomlinson/kind/pkg/log"
 )
 
 // NewCommand returns a new cobra.Command for export

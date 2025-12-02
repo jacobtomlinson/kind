@@ -19,8 +19,8 @@ package common
 import (
 	"testing"
 
-	"sigs.k8s.io/kind/pkg/internal/apis/config"
-	"sigs.k8s.io/kind/pkg/internal/assert"
+	"github.com/jacobtomlinson/kind/pkg/internal/apis/config"
+	"github.com/jacobtomlinson/kind/pkg/internal/assert"
 )
 
 func TestGetProxyEnvs(t *testing.T) {
